@@ -1,0 +1,105 @@
+/* components/NavBar.module.css */
+
+.nav {
+  background-color: #222;
+  font-size: small;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative; /* Ensure position relative for absolute menu */
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  padding: 5px;
+  border: 1px solid #444;
+  background-color: #1e1e1e;
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 10px; /* Adjust as needed */
+  width: 200px; /* Adjust width as needed */
+}
+
+.navLinks {
+  list-style: none;
+  display: flex; /* Display menu as flex */
+  justify-content: flex-end; /* Align menu items to the right */
+}
+
+.navLinks ul {
+  display: flex;
+  gap: 20px; /* Adjust spacing between menu items */
+}
+
+.navLink {
+  text-decoration: none;
+  color: #777;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  display: flex; /* Ensure flex display */
+  align-items: center; /* Center items vertically */
+}
+
+.navLink svg {
+  margin-right: 8px; /* Space between icon and text */
+  width: 20px; /* Set consistent icon width */
+  height: 20px; /* Set consistent icon height */
+}
+
+.navLink:hover {
+  color: aqua;
+}
+
+.hamburger {
+  display: none; /* Initially hide hamburger on desktop */
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; /* Hide menu on smaller screens initially */
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background-color: #1e1e1e;
+    z-index: 1000;
+    padding: 10px 0;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%); /* Initially hide menu off-screen */
+    flex-direction: column; /* Stack menu items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .navLinks.showMenu {
+    transform: translateY(0); /* Show menu on click */
+    display: flex; /* Show menu as flex on smaller screens */
+  }
+
+  .navLinks ul {
+    width: 100%; /* Ensure full width */
+    text-align: center; /* Center items horizontally */
+    gap: 10px; /* Adjust spacing between menu items */
+  }
+
+  .navLink {
+    padding: 15px; /* Adjust padding */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon */
+  }
+}
