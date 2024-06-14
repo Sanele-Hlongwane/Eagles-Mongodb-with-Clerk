@@ -1,6 +1,6 @@
 // _app.tsx
 import { ClerkProvider } from '@clerk/nextjs';
-import '../styles/globals.css'; // adjust path as necessary
+import styles from '../styles/global.module.css'; // Import CSS module
 import NavBar from '../components/NavBar'; // adjust path as necessary
 import type { AppProps } from 'next/app'; // Import AppProps type from Next.js
 

@@ -1,0 +1,11 @@
+/* globals.module.css */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
