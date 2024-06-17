@@ -1,31 +1,37 @@
+// pages/_app.tsx or any layout component (e.g., RootLayout.tsx)
+
+import Head from 'next/head';
 import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import NavBar from './components/NavBar';
-import './globals.css';
+import '../../styles/globals.css'; // Adjust path as per your project structure
 
 export const metadata = {
-  title: 'My App',
-  description: 'My App Description',
+  title: 'Eagles Ring',
+  description: 'Investment platform',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body>
-          <NavBar />
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-          {children}
-        </body>
-      </html>
+      <div>
+        <Head>
+          <title>{metadata.title}</title>
+          <meta name="description" content={metadata.description} />
+          {/* Add other meta tags as needed */}
+        </Head>
+        
+        <NavBar />
+        
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        
+        {children}
+      </div>
     </ClerkProvider>
   );
 }
