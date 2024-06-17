@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { UserButton } from '@clerk/nextjs';
@@ -36,7 +37,7 @@ export default function NavBar() {
       <nav className={`${styles.navLinks} ${isDesktop ? styles.desktopMenu : ''} ${showMenu ? styles.showMenu : ''}`}>
         <ul>
           <li>
-            <Link href="/">
+            <Link href="/index">
               <div className={styles.navLink}>
                 <FontAwesomeIcon icon={faHome} />
                 <span>Home</span>
